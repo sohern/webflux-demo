@@ -12,4 +12,6 @@ public class WebfluxDemoApplication {
 		SpringApplication.run(WebfluxDemoApplication.class, args);
 	}
 
+	//BeerWebClient beerWebClient = new BeerWebClient();
+	//beerWebClient.getResult();
 }

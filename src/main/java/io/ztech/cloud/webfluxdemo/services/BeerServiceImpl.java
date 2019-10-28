@@ -19,13 +19,12 @@ public class BeerServiceImpl implements BeerService {
 
     @Override
     public Flux<Beer> allBeers() {
-        return allBeers(DEFAULT_LIMIT);
+        return beerRepository.findAll();
     }
 
     @Override
-    public Flux<Beer> allBeers(int limit) {
-//        return beerRepository.findAll(Sort.by(new Sort.Order(Sort.Direction.DESC, "abv")));
-        return beerRepository.findAll();
+    public Flux<Beer> allBeers(int limit, int offset) {
+        return beerRepository.findByLimitAndOffset(limit, offset);
     }
 
     @Override

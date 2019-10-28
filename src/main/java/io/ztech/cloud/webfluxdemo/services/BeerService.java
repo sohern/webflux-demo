@@ -6,6 +6,6 @@ import reactor.core.publisher.Mono;
 
 public interface BeerService {
     Flux<Beer> allBeers();
-    Flux<Beer> allBeers(int limit);
+    Flux<Beer> allBeers(int limit, int offset);
     Mono<Beer> findById(String id);
 }

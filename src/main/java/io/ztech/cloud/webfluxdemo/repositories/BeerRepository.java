@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 
 @Repository("beerRepository")
 public interface BeerRepository extends ReactiveSortingRepository<Beer, String> {
-    @Override
-    @Query("#{#n1ql.selectEntity} WHERE type = 'beer'")
-    Flux<Beer> findAll();
+    //@Override
+    @Query("#{#n1ql.selectEntity} WHERE type = 'beer' LIMIT $1 OFFSET $2")
+    Flux<Beer> findByLimitAndOffset(int limit, int offset);
 }
